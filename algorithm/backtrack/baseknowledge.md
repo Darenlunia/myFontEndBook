@@ -46,7 +46,7 @@ findNext([1,2,3])
 
 为什么说是DFS，思考二叉树中的DFS递归实现方法，是先后执行dfs\(node.left\)和dfs\(node.right\)，而这里的枚举，也是树的形式（称为决策树，如下图），只不过将二叉树变成了n叉树，用循环N次代替dfs\(node.left\)和dfs\(node.right\)。
 
-![n=3&#x65F6;&#x7684;&#x679A;&#x4E3E;&#x6811;](../../.gitbook/assets/tu-pian-%20%281%29.png)
+![n=3&#x65F6;&#x7684;&#x679A;&#x4E3E;&#x6811;](../../.gitbook/assets/tu-pian-.png)
 
 时间复杂度为 O\(n!\)。
 
