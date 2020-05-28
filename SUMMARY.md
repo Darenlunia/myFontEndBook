@@ -29,6 +29,7 @@
   * [上台阶问题](algorithm/dynamic-programming/shang-tai-jie-wen-ti.md)
   * [不同路径](algorithm/dynamic-programming/different-path.md)
   * [凑零钱问题](algorithm/dynamic-programming/howmuch.md)
+  * [背包问题](algorithm/dynamic-programming/bei-bao-wen-ti.md)
   * [总结](algorithm/dynamic-programming/conclusion.md)
 
 ## 前端学习规划 <a id="planning"></a>
