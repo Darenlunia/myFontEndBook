@@ -3,6 +3,22 @@
 * [前言](README.md)
 * [Github](https://docs.gitbook.com/getting-started/start-exploring)
 
+## 计算机基础 <a id="baseknowledge"></a>
+
+* [性能优化](baseknowledge/optimization/README.md)
+  * [图片懒加载](baseknowledge/optimization/lazy.md)
+* [浏览器](baseknowledge/browser/README.md)
+  * [浏览器缓存](baseknowledge/browser/cache.md)
+  * [URL输入后发生的事](baseknowledge/browser/url-shu-ru-hou-fa-sheng-de-shi.md)
+* [计算机网络](baseknowledge/network/README.md)
+  * [HTTP/HTTPS](baseknowledge/network/http-https.md)
+  * [HTTP代理](baseknowledge/network/proxy.md)
+  * [Cookie](baseknowledge/network/cookie.md)
+  * [同源策略](baseknowledge/network/crosssite.md)
+  * [网络安全](baseknowledge/network/cypher-security.md)
+  * [TCP/UDP](baseknowledge/network/tcp-udp.md)
+  * [TCP/IP五层模型](baseknowledge/network/tcpip-wu-ceng-mo-xing.md)
+
 ## 手撕JS代码 <a id="jscode"></a>
 
 * [深拷贝与浅拷贝](jscode/shen-kao-bei-yu-qian-kao-bei/README.md)
