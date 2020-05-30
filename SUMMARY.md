@@ -21,9 +21,11 @@
 
 ## 手撕JS代码 <a id="jscode"></a>
 
+* [每日一练](jscode/practice.md)
 * [深拷贝与浅拷贝](jscode/shen-kao-bei-yu-qian-kao-bei/README.md)
   * [值类型和引用类型赋值](jscode/shen-kao-bei-yu-qian-kao-bei/han-shu-chuan-can.md)
   * [深浅拷贝](jscode/shen-kao-bei-yu-qian-kao-bei/arrcopy.md)
+* [节流与防抖](jscode/jie-liu-yu-fang-dou.md)
 
 ## 算法 <a id="algorithm"></a>
 
@@ -55,4 +57,12 @@
 ## 前端面经
 
 * [知识架构](qian-duan-mian-jing/zhi-shi-jia-gou.md)
+
+## html/css
+
+* [Untitled](html-css/untitled.md)
+
+## 工具
+
+* [git](gong-ju/git.md)
 
