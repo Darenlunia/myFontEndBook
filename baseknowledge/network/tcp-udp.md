@@ -4,6 +4,10 @@ description: 从以前笔记中粘贴过来的，格式不太优美，有空整�
 
 # TCP/UDP
 
+Chrome 在同一个域名下要求同时最多只能有 6 个 TCP 连接，超过 6 个的话剩下的请求就得等待。等待后才进入 TCP 连接的建立阶段。首先解释一下什么是 TCP:
+
+> TCP（Transmission Control Protocol，传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议。
+
 * TCP和UDP的区别？[http://47.98.159.95/my\_blog/tcp/001.html](http://47.98.159.95/my_blog/tcp/001.html)
 * 为什么TCP三次握手，而不是两次或四次？
   * [http://47.98.159.95/my\_blog/tcp/002.html\#恋爱模拟](http://47.98.159.95/my_blog/tcp/002.html#恋爱模拟)

@@ -89,8 +89,8 @@ URI 只能使用`ASCII`, ASCII 之外的字符是不支持显示的，而且还�
 * `1开头的：协议处理中的状态，需要后续操作`
 * `2开头的：200 204`
 * `3开头的：301 302 304`
-* `4开头的：400 403 404 405`
-* `5开头的：500 502 503`
+* `4开头的：400 403 404` 
+* `5开头的：500 503`
 
 ### 2xx <a id="_2xx"></a>
 
@@ -122,11 +122,15 @@ URI 只能使用`ASCII`, ASCII 之外的字符是不支持显示的，而且还�
 
 **`500 Internal Server Error`**: 仅仅告诉你服务器出错了，出了啥错咱也不知道。
 
-**`502 Bad Gateway`**: 服务器自身是正常的，但访问的时候出错了，啥错误咱也不知道。
-
 **`503 Service Unavailable`**: 表示服务器当前很忙，暂时无法响应服务
 
 ## 5. 头部Content系列字段
+
+`Accept`代表`发送端（客户端）`希望接受的数据类型。 比如：`Accept：text/xml;` 代表客户端希望接受的数据类型是xml类型。
+
+`Content-Type`代表`发送端（客户端|服务器）`发送的实体数据的数据类型。 比如：`Content-Type：text/html;` 代表发送端发送的数据格式是html。
+
+二者合起来， `Accept:text/xml； Content-Type:text/html` 即代表希望**接受的数据类型是xml格式，本次请求发送的数据的数据格式是html**。 
 
 ![](../../.gitbook/assets/tu-pian-%20%286%29.png)
 
@@ -160,7 +164,7 @@ HTTP 从**MIME type**取了一部分来标记报文 body 部分的数据类型�
 
 对于`multipart/form-data`而言:
 
-* 请求头中的`Content-Type`字段会包含`boundary`，且`boundary`的值有浏览器默认指定。例: `Content-Type: multipart/form-data;boundary=----WebkitFormBoundaryRRJKeWfHPGrS4LKe`。
+* 请求头中的`Content-Type`字段会包含`boundary`，且`boundary`的值由浏览器默认指定。例: `Content-Type: multipart/form-data;boundary=----WebkitFormBoundaryRRJKeWfHPGrS4LKe`。
 * 数据会分为多个部分，每两个部分之间通过分隔符来分隔，每部分表述均有 HTTP 头部描述子包体，如`Content-Type`，在最后的分隔符会加上`--`表示结束。
 
 相应的`请求体`是下面这样:
@@ -170,13 +174,14 @@ Content-Disposition: form-data;name="data1";
 Content-Type: text/plain
 data1
 ----WebkitFormBoundaryRRJKeWfHPGrS4LKe
+//没有这个空行，这里弄个空行看着方便
 Content-Disposition: form-data;name="data2";
 Content-Type: text/plain
 data2
 ----WebkitFormBoundaryRRJKeWfHPGrS4LKe--
 ```
 
-在实际的场景中，对于图片等文件的上传，基本采用`multipart/form-data`而不用`application/x-www-form-urlencoded`，因为没有必要做 URL 编码，带来巨大耗时的同时也占用了更多的空间。
+在实际的场景中，对于文件、图片上传，基本采用`multipart/form-data`而不用`application/x-www-form-urlencoded`，因为没有必要做 URL 编码，带来巨大耗时的同时也占用了更多的空间。
 
 ### 压缩方式
 
@@ -216,13 +221,13 @@ Accept-Charset: charset=utf-8
 #### （1） 特点
 
 * 灵活可扩展，可扩展请求头响应头，可传输各种格式数据。
-* 可靠传输。HTTP 基于 TCP传输，这也属于 TCP 的特性。
+* **可靠传输**。HTTP 基于 TCP传输，这也属于 TCP 的特性。
 * 请求-应答。也就是`一发一收`、`有来有回`， 当然这个请求方和应答方不单单指客户端和服务器之间，如果某台服务器作为代理来连接后端的服务端，那么这台服务器也会扮演**请求方**的角色。
-* 无状态。这里的状态是指**通信过程的上下文信息**，而每次 http 请求都是独立、无关的，默认不需要保留状态信息。
+* **无状态**。这里的状态是指**通信过程的上下文信息**，而每次 http 请求都是独立、无关的，默认不需要保留状态信息。
 
 #### （2）缺点
 
-* 无状态，明文传输，[队头阻塞](http://47.98.159.95/my_blog/http/010.html#%E4%BB%80%E4%B9%88%E6%98%AF-http-%E9%98%9F%E5%A4%B4%E9%98%BB%E5%A1%9E%EF%BC%9F)。
+* 无状态（cookie记录状态），明文传输（HTTPS解决），[队头阻塞](http://47.98.159.95/my_blog/http/010.html#%E4%BB%80%E4%B9%88%E6%98%AF-http-%E9%98%9F%E5%A4%B4%E9%98%BB%E5%A1%9E%EF%BC%9F)（HTTP1.2版本协议解决）。
 
 ### HTTPS基本概念
 
